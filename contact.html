@@ -72,7 +72,8 @@
   {
     title:'contact',
     body:'fname='+$('[name=fname]').val()+'&lname='+$('[name=lname]').val()+'&Subject='+$('#text-yui_3_17_2_1_1444829626444_252030-field').val()+'&Message='+$('#textarea-yui_3_17_2_1_1444829626444_252458-field').val()
-    +'&Email Address='+$('#email-yui_3_17_2_1_1444829626444_251602-field').val()
+    +'&Email Address='+$('#email-yui_3_17_2_1_1444829626444_251602-field').val(),
+    to:'info@accuzonemc.com'
   },function(res){
 if(res.code==1){
   $('.field-list').hide()
