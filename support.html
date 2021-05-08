@@ -35,7 +35,7 @@
 <!-- End of Squarespace Headers -->
 <script src="/js/jquery.min.js"></script>
 <script>
-  function submit () {
+  function warrantySubmit () {
          $('#field-error').hide()
          $('#field-name').hide()
          $('#yui_3_17_2_1_1444829626444_252030-field').hide()
@@ -69,7 +69,7 @@
         }
         $.post('https://artemis.yucent.com/org/cms/api/temp/send/mail',
   {
-    title:'support',
+    title:'warranty',
     body:'fname='+$('[name=fname]').val()+'&lname='+$('[name=lname]').val()+'&Product Serial Number='+$('#text-yui_3_17_2_1_1444829626444_252030-field').val()+'&Amazon Order ID='+$('#text-yui_3_17_2_1_1594227740331_16859-field').val()
     +'&Email Address='+$('#email-yui_3_17_2_1_1444829626444_251602-field').val(),
     to:'Support@accuzonemc.com'
@@ -555,7 +555,7 @@ if(res.code==1){
           
         "
       >
-        <input class="button sqs-system-button sqs-editable-button" type="text" value="Submit" id="submit" onclick="submit()"/>
+        <input class="button sqs-system-button sqs-editable-button" type="text" value="Submit" id="submit" onclick="warrantySubmit()"/>
       </div>
       <div class="hidden form-submission-text">Thank you!</div>
       <div class="hidden form-submission-html" data-submission-html=""></div>
