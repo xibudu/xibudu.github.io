@@ -39,8 +39,7 @@
          $('#field-name').hide()
          $('#yui_3_17_2_1_1444829626444_252030-field').hide()
          $('#yui_3_17_2_1_1444829626444_251602-field').hide()
-
-        //  if(!$('[name=lname]').val().length){
+                //  if(!$('[name=lname]').val().length){
         //   $('#field-error').show()
         //    $('#field-name').text('Name is missing required subfields: Last').show()
         //    return false;
@@ -48,18 +47,22 @@
          if(!$('[name=fname]').val().length){
           $('#field-error').show()
            $('#field-name').text('Name is required.').show()
+           $('#submit').val('Submit')
            return false;
           }
          if(!$('#text-yui_3_17_2_1_1444829626444_252030-field').val().length){
           $('#field-error').show()
           $('#yui_3_17_2_1_1444829626444_252030-field').text('Product Serial Number is required.').show()
+          $('#submit').val('Submit')
           return false;
         }
          if(!$('#email-yui_3_17_2_1_1444829626444_251602-field').val().length){
           $('#field-error').show()
           $('#yui_3_17_2_1_1444829626444_251602-field').text('Email Address is not valid. Email addresses should follow the format user@domain.com.').show()
+          $('#submit').val('Submit')
           return false;
         }
+        $('#submit').val('Submitting')
         $.post('https://artemis.yucent.com/org/cms/api/temp/send/mail',
   {
     title:'SIGN UP',
@@ -70,6 +73,7 @@
 if(res.code==1){
   $('.field-list').hide()
   $('#submit').hide()
+  $('#submit').val('Submit')
   $('.form-submission-text').show()
 }
   })
@@ -101,6 +105,7 @@ if(res.code==1){
           $('#yui_3_17_2_1_1444829626444_251602-field').text('Email Address is not valid. Email addresses should follow the format user@domain.com.').show()
           return false;
         }
+        $('#submit').val('Submitting')
         $.post('https://artemis.yucent.com/org/cms/api/temp/send/mail',
   {
     title:'warranty',
@@ -111,6 +116,7 @@ if(res.code==1){
 if(res.code==1){
   $('.field-list').hide()
   $('#submit').hide()
+  $('#submit').val('Submit')
   $('.form-submission-text').show()
 }
   })
@@ -146,6 +152,7 @@ function contactSubmit () {
           $('#yui_3_17_2_1_1444829626444_252458-field').show()
           return false;
         }
+        $('#submit').val('Submitting')
         $.post('https://artemis.yucent.com/org/cms/api/temp/send/mail',
   {
     title:'contact',
@@ -156,6 +163,7 @@ function contactSubmit () {
 if(res.code==1){
   $('.field-list').hide()
   $('#submit').hide()
+  $('#submit').val('Submit')
   $('.form-submission-text').show()
 }
   })
@@ -297,7 +305,7 @@ if(res.code==1){
             <a href="/products.html" class="Mobile-overlay-folder-item">
               AZ08EWB
             </a>
-            <a href="/AZ11EWB.html" class="Mobile-overlay-folder-item">
+            <a href="/AZ11EWB" class="Mobile-overlay-folder-item">
               AZ11EWB
             </a>
           </div>
@@ -449,7 +457,7 @@ if(res.code==1){
                   <a href="/products.html" class="Header-nav-folder-title" data-controller="HeaderNavFolderTouch">Products</a>
                   <span class="Header-nav-folder">
                     <a href="/products.html" class="Header-nav-folder-item" data-test="template-nav">AZ08EWB</a>
-                    <a href="/AZ11EWB.html" class="Header-nav-folder-item"
+                    <a href="/AZ11EWB" class="Header-nav-folder-item"
                       data-test="template-nav">AZ11EWB</a>
                   </span>
                 </span><span class="Header-nav-item Header-nav-item--folder">
